@@ -1,0 +1,11 @@
+{
+   "para": {
+       "blog_name":"Learning Python",
+       "sub_name" : "A blog For A Beginners ",
+       "admin" : "admin",
+       "linkdin_link" : "https://linkedin.com/in/shishir-patel-95a655180",
+       "git_link" : "https://github.com/Shishir364", 
+       "tut_link" : "",
+       "posts_in_page":3
+    }
+}

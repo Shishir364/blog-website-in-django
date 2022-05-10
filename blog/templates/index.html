@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static %}
+        <header class="masthead" style='background-image: url("{% static 'img/python_post_bg.jpg' %}")'>
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading">
+                            <h1>{{blog_name}}</h1>
+                            <span class="subheading">{{sub_name}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Main Content-->
+        <div class="container px-4 px-lg-5 md">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                {% for post in page_obj  %}
+                    <div class="post-preview">
+                        <a href="post/{{post.slug}}">
+                            <h2 class="post-title">{{post.title}}</h2>
+                            <h3 class="post-subtitle">{{post.sub_title| truncatechars:"84"}}</h3>
+                        </a>
+                        <p class="post-meta">
+                            Posted by
+                            <a href="{{git_link}}", target=_blank>admin</a>
+                            {{post.date}}
+                        </p>
+                    </div>         
+                {% endfor %}           
+                    <!-- Divider-->
+                    <hr class="my-4" />
+                    <!-- Pager-->
+
+                    <nav aria-label="Page navigation example"style="display: block ruby; text-align:center">
+                        <ul class="pagination">
+                        {% if page_obj.has_previous %}
+                          <li class="page-item"><a class="btn btn-outline-dark btn-sm text-uppercase " href="?page={{ page_obj.previous_page_number }}">&larr;</a></li>
+                        {% endif %}
+
+                        {% for page in page_len %}
+                          <li class="page-item"><a class="btn btn-outline-dark btn-sm text-uppercase" href="?page={{page}}" style="text-align:center" >{{page}}</a></li>
+                        {% endfor %} 
+
+                        {% if page_obj.has_next %}
+                          <li class="page-item"><a class="btn btn-outline-dark btn-sm text-uppercase" href="?page={{ page_obj.next_page_number }}">&rarr;</a></li>
+                        {% endif %}
+                        </ul>
+                    </nav>
+
+                    
+                </div>
+            </div>
+        </div>
+        
+{% endblock  %}
