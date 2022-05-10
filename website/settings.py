@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-u6s)apq2n8bhrduao@!w1-mugyneu@ye-37)ej8$&u4_9y)72q'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['192.168.1.2','127.0.0.1',"192.168.99.5"]
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -131,8 +131,8 @@ EMAIL_BACKEND ='django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'rahanpatel364@gmail.com' # this email will be used to send emails
-EMAIL_HOST_PASSWORD = 'Shishir@123' # host email password required
+EMAIL_HOST_USER = 'example@example.com' # this email will be used to send emails
+EMAIL_HOST_PASSWORD = '#########' # host email password required
 # now sign in with your host gmail account in your browser
 # open following link and turn it ON
 # https://myaccount.google.com/lesssecureapps
